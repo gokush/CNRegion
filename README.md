@@ -1,7 +1,7 @@
 CN Region
 ==========
 
-这个脚本从[http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2013/index.html](中国统计局)官方网站
+这个脚本从(http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2013/index.html)[中国统计局]官方网站
 下载数据并保存到sqlite3数据库。
 
 ## 安装
