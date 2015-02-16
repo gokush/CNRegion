@@ -1,0 +1,4 @@
+request
+request-cache
+beautifulsoup4
+pinyin
