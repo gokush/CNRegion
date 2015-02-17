@@ -1,0 +1,2 @@
+deb http://mirrors.sohu.com/debian stable main contrib non-free
+deb http://mirrors.sohu.com/debian/ wheezy-updates main contrib non-free

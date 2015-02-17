@@ -4,34 +4,43 @@ import pinyin
 
 connection = sqlite3.connect('/tmp/region.sqlite3')
 
-class Province:
+class Jsonable:
+    def json(self):
+        return {\
+            "id": self.id,
+            "name": self.name
+        }
+
+class Province(Jsonable):
     def __init__(self, id, name):
         self.id = id
         self.name = name
         self.cities = []
 
-class City:
+    
+
+class City(Jsonable):
     def __init__(self, id, name, province):
         self.id = id
         self.name = name
         self.province = province
         self.county = []
 
-class County:
+class County(Jsonable):
     def __init__(self, id, name, city):
         self.id = id
         self.name = name
         self.city = city
         self.town = []
 
-class Town:
+class Town(Jsonable):
     def __init__(self, id, name, county):
         self.id = id
         self.name = name
         self.county = county
         self.village = []
 
-class Village:
+class Village(Jsonable):
     def __init__(self, id, name, town, category):
         self.id = id
         self.name = name

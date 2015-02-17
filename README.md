@@ -29,3 +29,14 @@ optional arguments:
                         跳过省份的第x个
   --verbose, -v         打印日志内容
 ```
+
+## Dockerfile 开发环境
+
+```
+$ docker build .
+Removing intermediate container bc39e330f294
+Successfully built 2202867a5e91
+$ docker run -t -i --rm -v /Users/goku/workspace/cnregion:/cnregion \
+> 2202867a5e91 /bin/bash
+root@5bb9c06986d7:/# python /cnregion/cli.py
+```

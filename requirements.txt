@@ -1,4 +1,5 @@
-request
-request-cache
-beautifulsoup4
+requests
+requests-cache
+BeautifulSoup
 pinyin
+Django==1.5
