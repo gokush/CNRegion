@@ -3,6 +3,7 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+import os
 import sys
 from os.path import *
 ROOT =abspath(join(dirname(__file__), "../../"))
@@ -14,15 +15,34 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+try:
+    import sae
+    DB_ENGINE = 'django.db.backends.mysql'
+    DB_HOST = sae.const.MYSQL_HOST
+    DB_PORT = sae.const.MYSQL_PORT
+    DB_USER = sae.const.MYSQL_USER
+    DB_PASS = sae.const.MYSQL_PASS
+    DB_NAME = sae.const.MYSQL_DB
+
+    from sae._restful_mysql import monkey
+    monkey.patch()
+except ImportError:
+    DB_ENGINE = 'django.db.backends.sqlite3'
+    DB_HOST = ''
+    DB_PORT = ''
+    DB_USER = ''
+    DB_PASS = ''
+    DB_NAME = 'dev.db'
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'dev.db',                      # Or path to database file if using sqlite3.
+        'ENGINE': DB_ENGINE, # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': DB_NAME,                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
+        'USER': DB_USER,
+        'PASSWORD': DB_PASS,
+        'HOST': DB_HOST,                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': DB_PORT,                      # Set to empty string for default.
     }
 }
 
