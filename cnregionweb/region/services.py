@@ -1,4 +1,4 @@
-import fetch
+from cnregion import fetch
 
 def provinces():
     return [i.json() for i in fetch.fetch_provinces()]

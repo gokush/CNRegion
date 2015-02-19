@@ -14,7 +14,7 @@ setup(
     author='goku',
     author_email='kakarrot.sh@qq.com',
     url='https://github.com/gokush/cnregion',
-    packages=[''],
+    packages=['cnregion'],
     package_data={
         'cnregion': ['README.md',]
     },

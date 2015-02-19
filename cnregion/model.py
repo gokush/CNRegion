@@ -1,8 +1,8 @@
 #!-*- encoding:utf-8 -*-
-import sqlite3
+# import sqlite3
 import pinyin
 
-connection = sqlite3.connect('/tmp/region.sqlite3')
+# connection = sqlite3.connect('/tmp/region.sqlite3')
 
 class Jsonable:
     def json(self):
@@ -180,11 +180,11 @@ class VillageRepository:
              village.name, pinyin.get(village.name),))
         connection.commit()
 
-ProvinceRepository().create()
-CityRepository().create()
-CountyRepository().create()
-TownRepository().create()
-VillageRepository().create()
+# ProvinceRepository().create()
+# CityRepository().create()
+# CountyRepository().create()
+# TownRepository().create()
+# VillageRepository().create()
 
 if "__main__" == __name__:
     province = Province(11, u"北京")
