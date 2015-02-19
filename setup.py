@@ -8,8 +8,8 @@ with codecs.open('README.md', encoding='utf-8') as f:
 
 setup(
     name="cnregion",
-    version="2.6.9",
-    license='http://www.apache.org/licenses/LICENSE-2.0',
+    version="0.0.1",
+    license='http://opensource.org/licenses/MIT',
     description="这个脚本从中国统计局官方网站下载最新的中国行政区域的数据",
     author='goku',
     author_email='kakarrot.sh@qq.com',
