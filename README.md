@@ -10,6 +10,26 @@ CN Region
 $ pip install cnregion
 ```
 
+## HTTP API
+
+该项目提供一个公开的API，可以无需搭建自己的服务器。
+
+format参数可以选择[json,jsonp]，如果选择jsonp，`/jsonp/provinces/?callback=call_provinces`有效。
+
+### GET /{format}/provinces/
+
+```
+HTTP/1.1 200
+
+[
+    {
+        "id": 11,
+        "name": "北京"
+]
+```
+
+###
+
 ## 使用
 
 ```
