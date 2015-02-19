@@ -1,3 +1,4 @@
+#!-*- encoding:utf-8 -*-
 import codecs
 from setuptools import setup
 
@@ -6,7 +7,7 @@ with codecs.open('README.md', encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name="shadowsocks",
+    name="cnregion",
     version="2.6.9",
     license='http://www.apache.org/licenses/LICENSE-2.0',
     description="这个脚本从中国统计局官方网站下载最新的中国行政区域的数据",
@@ -15,7 +16,7 @@ setup(
     url='https://github.com/gokush/cnregion',
     packages=[''],
     package_data={
-        'shadowsocks': ['README.rst', 'LICENSE']
+        'cnregion': ['README.md',]
     },
     install_requires=[],
     entry_points="""

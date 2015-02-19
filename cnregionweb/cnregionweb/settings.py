@@ -1,3 +1,4 @@
+#!-*- encoding:utf-8 -*-
 # Django settings for cnregionweb project.
 
 DEBUG = True
@@ -23,9 +24,6 @@ try:
     DB_USER = sae.const.MYSQL_USER
     DB_PASS = sae.const.MYSQL_PASS
     DB_NAME = sae.const.MYSQL_DB
-
-    from sae._restful_mysql import monkey
-    monkey.patch()
 except ImportError:
     DB_ENGINE = 'django.db.backends.sqlite3'
     DB_HOST = ''
